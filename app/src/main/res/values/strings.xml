@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">PornGuard</string>
+    <string name="open_accessibility_settings">فعال‌سازی سرویس دسترسی (Accessibility)</string>
+    <string name="accessibility_status_hint">برای شروع، سرویس دسترسی را روشن کنید و اپ مرورگر را باز کنید.</string>
+    <string name="accessibility_service_description">این سرویس برای تشخیص الگوهای پرخطر در متن قابل مشاهده روی صفحه به شما هشدار می‌دهد.</string>
+    <string name="channel_name">هشدار خطر</string>
+    <string name="alert_title">ناحیه پرخطر</string>
+    <string name="alert_message">محتوای حساس شناسایی شد.</string>
+</resources>
