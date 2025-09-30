@@ -8,6 +8,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -26,14 +27,16 @@ jobs:
           sdkmanager --install "platforms;android-34" "platform-tools" "build-tools;34.0.0"
           yes | sdkmanager --licenses
 
-      - name: Cache Gradle
+      - name: Setup Gradle (caching)
         uses: gradle/actions/setup-gradle@v3
 
+      # ایجاد Gradle Wrapper در ریپو (اگر قبلاً وجود ندارد)
+      - name: Generate Gradle Wrapper 8.7
+        run: gradle wrapper --gradle-version 8.7
+
+      # بیلد با Wrapper
       - name: Build debug APK
-        uses: gradle/gradle-build-action@v3
-        with:
-          gradle-version: 8.7
-          arguments: assembleDebug
+        run: ./gradlew assembleDebug
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
